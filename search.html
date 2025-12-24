@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHWORLD | Search</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo-section">
+    <img src="images/twlogo.jpg" alt="TECHWORLD Logo">
+    <h1>TECHWORLD</h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <span class="navbar-brand">Search</span>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="search.html">Search</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="container text-center">
+    <input type="text" id="searchBar" class="form-control" placeholder="Search for products (e.g., phone, laptop, airpods, watch)">
+  </div>
+
+  <!-- Product Grid -->
+  <div class="container mt-4">
+    <div class="row" id="productGrid">
+      
+      <!-- Phones -->
+      <div class="col-md-4 product-card" data-category="phone">
+        <img src="images/iphone.jpg" alt="iPhone">
+        <div class="product-overlay">
+          <h5>iPhone</h5>
+          <p>Latest Apple smartphone</p>
+          <p>Price: ₹69999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('iPhone','images/iphone.jpg','₹69999','Latest Apple smartphone')">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-md-4 product-card" data-category="phone">
+        <img src="images/samsung.jpg" alt="Samsung Galaxy">
+        <div class="product-overlay">
+          <h5>Samsung Galaxy</h5>
+          <p>High-performance Android phone</p>
+          <p>Price: ₹59999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('Samsung Galaxy','images/samsung.jpg','₹59999','High-performance Android phone')">Add to Cart</button>
+        </div>
+      </div>
+        <div class="col-md-4 product-card" data-category="phone">
+        <img src="images/samsung-2.jpg" alt="Samsung Phone">
+        <div class="product-overlay">
+          <h5>Samsung Galaxy</h5>
+          <p>High-performance Android phone</p>
+          <p>price:1,00,000/-</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+          onclick="addToCart('Samsung Galaxy','images/samsung-2.jpg','₹100000','High-performance Android phone')">Add to Cart</button>
+        </div>
+      </div>
+         <div class="col-md-4 product-card" data-category="phone">
+        <img src="images/phone.jpg" alt="iPhone">
+        <div class="product-overlay">
+          <h5>iPhone</h5>
+          <p>Latest Apple smartphone</p>
+          <p>Price: ₹79999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('iPhone','images/phone.jpg','₹79999','Latest Apple smartphone')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Laptops -->
+      <div class="col-md-4 product-card" data-category="laptop">
+        <img src="images/laptop.jpg" alt="Laptop">
+        <div class="product-overlay">
+          <h5>Laptop</h5>
+          <p>Powerful performance for work</p>
+          <p>Price: ₹49999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('Dell Laptop','images/laptop.jpg','₹49999','Powerful performance for work')">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-md-4 product-card" data-category="laptop">
+        <img src="images/lenovo.jpg" alt="Lenovo Laptop">
+        <div class="product-overlay">
+          <h5>Lenovo Laptop</h5>
+          <p>Reliable and affordable</p>
+          <p>Price: ₹39999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('Lenovo Laptop','images/lenovo.jpg','₹39999','Reliable and affordable')">Add to Cart</button>
+        </div>
+      </div>
+       <div class="col-md-4 product-card" data-category="laptop">
+        <img src="images/hp-laptop.jpg" alt="Laptop">
+        <div class="product-overlay">
+          <h5> HP Laptop</h5>
+          <p>Powerful performance for work</p>
+          <p>Price: ₹59999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+          onclick="addToCart('HP Laptop','images/hp-laptop.jpg','₹59999','Powerful performance for work')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-md-4 product-card" data-category="laptop">
+        <img src="images/laptop-mac.jpg" alt="Laptop">
+        <div class="product-overlay">
+          <h5>apple laptop</h5>
+          <p>High performance for Coding</p>
+          <p>Price: ₹79999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+          onclick="addToCart('Apple Laptop','images/laptop-mac.jpg','₹79999','High performance for Coding')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- AirPods -->
+      <div class="col-md-4 product-card" data-category="airpods">
+        <img src="images/airpods.jpg" alt="AirPods">
+        <div class="product-overlay">
+          <h5>AirPods</h5>
+          <p>Wireless earbuds by Samsung</p>
+          <p>Price: ₹14999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('AirPods','images/airpods.jpg','₹14999','Wireless earbuds by Apple')">Add to Cart</button>
+        </div>
+      </div>
+        <div class="col-md-4 product-card" data-category="airpods">
+        <img src="images/airpods-pro2.jpg" alt="Airpods">
+        <div class="product-overlay">
+          <h5>AirPods</h5>
+          <p>Wireless earbuds by Apple</p>
+          <p>Price: ₹19999 </p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+          onclick="addToCart('AirPods','images/airpods-pro2.jpg','₹19999','Wireless earbuds by Apple')">Add to Cart</button>
+        </div>
+      </div>
+       <div class="col-md-4 product-card" data-category="airpods">
+        <img src="images/airpods-boat.jpg" alt="Airpods">
+        <div class="product-overlay">
+          <h5>AirPods</h5>
+          <p>Wireless earbuds by Boat</p>
+          <p>Price:₹1999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+          onclick="addToCart('AirPods','images/airpods-boat.jpg','₹1999','Wireless earbuds by Boat')">Add to Cart</button>
+        </div>
+      </div>
+       <div class="col-md-4 product-card" data-category="airpods">
+        <img src="images/kdm-airpods.jpg" alt="Airpods">
+        <div class="product-overlay">
+          <h5>AirPods</h5>
+          <p>Wireless earbuds by KDM</p>
+          <p>Price: ₹1299</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+          onclick="addToCart('AirPods','images/kdm-airpods.jpg','₹1299','Wireless earbuds by KDM')">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Watches -->
+      <div class="col-md-4 product-card" data-category="watch">
+        <img src="images/apple-watch.jpg" alt="Apple Watch">
+        <div class="product-overlay">
+          <h5>Apple Watch</h5>
+          <p>Smartwatch with health tracking</p>
+          <p>Price: ₹29999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('Apple Watch','images/apple-watch.jpg','₹29999','Smartwatch with health tracking')">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col-md-4 product-card" data-category="watch">
+        <img src="images/watch-sam.jpg" alt="Samsung Galaxy Watch">
+        <div class="product-overlay">
+          <h5>Samsung Galaxy Watch</h5>
+          <p>Stylish smartwatch with long battery life</p>
+          <p>Price: ₹24999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('Samsung Galaxy Watch','images/watch-sam.jpg','₹24999','Stylish smartwatch with long battery life')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-md-4 product-card" data-category="watch">
+        <img src="images/watch.jpg" alt="Boat Watch">
+        <div class="product-overlay">
+          <h5>Boat Watch</h5>
+          <p>Stylish smartwatch with smooth touch</p>
+          <p>Price: ₹22999</p>
+          <button class="btn btn-success btn-sm">Buy</button>
+          <button class="btn btn-primary btn-sm" 
+            onclick="addToCart('Boat Watch','images/watch.jpg','₹22999','Stylish smartwatch with smooth touch')">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="contact.html">Contact</a> | <a href="about.html">About</a></p>
+    <p>&copy; 2025 TECHWORLD. All rights reserved.</p>
+  </footer>
+
+  <!-- Script for Search & Cart -->
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    const products = document.querySelectorAll('.product-card');
+
+    searchBar.addEventListener('keyup', function() {
+      const query = searchBar.value.toLowerCase();
+      products.forEach(product => {
+        const category = product.getAttribute('data-category');
+        if (category.includes(query) || query === "") {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    });
+
+    function addToCart(name, image, price, details) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, image, price, details });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(name + " added to cart!");}
+    </script>
+    </body>
+    </html>

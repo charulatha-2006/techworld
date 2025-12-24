@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHWORLD | Checkout</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo-section">
+    <img src="images/twlogo.jpg" alt="TECHWORLD Logo">
+    <h1>TECHWORLD</h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <span class="navbar-brand">Checkout</span>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Checkout Form -->
+  <div class="checkout-form">
+    <h2>Checkout</h2>
+    <div class="toggle-section">
+      <input type="checkbox" id="useProfile"> <label for="useProfile">Use Profile Info</label>
+    </div>
+    <form id="checkoutForm">
+      <input type="text" id="name" class="form-control" placeholder="Name" required>
+      <input type="email" id="email" class="form-control" placeholder="Email" required>
+      <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+      <textarea id="address" class="form-control" placeholder="Address" rows="3" required></textarea>
+      <input type="text" id="productName" class="form-control" readonly>
+      <input type="text" id="productPrice" class="form-control" readonly>
+      <button type="submit" class="btn btn-success btn-block">Place Order</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="contact.html">Contact</a> | <a href="about.html">About</a></p>
+    <p>&copy; 2025 TECHWORLD. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const useProfileCheckbox = document.getElementById('useProfile');
+
+    // Load product info from URL
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const productName = params.get('name');
+      const productPrice = params.get('price');
+      if (productName) document.getElementById('productName').value = productName;
+      if (productPrice) document.getElementById('productPrice').value = productPrice;
+    }
+
+    // Toggle profile info
+    useProfileCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+        if (savedProfile) {
+          document.getElementById('name').value = savedProfile.name;
+          document.getElementById('email').value = savedProfile.email;
+          document.getElementById('phone').value = savedProfile.phone;
+          document.getElementById('address').value = savedProfile.address;
+        } else {
+          alert("No profile info found. Please save your profile first.");
+          this.checked = false;
+        }
+      } else {
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('phone').value = "";
+        document.getElementById('address').value = "";
+      }
+    });
+
+    // Handle order placement
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Order placed successfully! Thank you for shopping with TECHWORLD.");
+      localStorage.removeItem("cart"); // clear cart after order
+      window.location.href = "home.html"; // redirect to home
+    });
+  </script>
+
+</body>
+</html>

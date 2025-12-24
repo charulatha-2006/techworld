@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHWORLD | Cart</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo-section">
+    <img src="images/twlogo.jpg" alt="TECHWORLD Logo">
+    <h1>TECHWORLD</h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <span class="navbar-brand">Cart</span>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="search.html">Search</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link active" href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cart Section -->
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <button class="btn btn-checkout btn-block" onclick="goToCheckout()">Proceed to Checkout</button>
+    <button class="btn btn-clear btn-block" onclick="clearCart()">Clear Cart</button>
+    <div id="emptyCart" class="empty-cart" style="display:none;">No items in cart.</div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="contact.html">Contact</a> | <a href="about.html">About</a></p>
+    <p>&copy; 2025 TECHWORLD. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItemsDiv = document.getElementById("cartItems");
+      const emptyCartDiv = document.getElementById("emptyCart");
+      cartItemsDiv.innerHTML = "";
+
+      if (cart.length === 0) {
+        emptyCartDiv.style.display = "block";
+        return;
+      } else {
+        emptyCartDiv.style.display = "none";
+      }
+
+      cart.forEach((item, index) => {
+        const name = item.name || "Unknown Item";
+        const price = item.price || "₹100000"; // placeholder if missing
+        const image = item.image || "images/default.jpg"; // fallback image
+        const details = item.details || "No details available";
+
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+          <img src="${image}" alt="${name}">
+          <div class="cart-item-details">
+            <h5>${name}</h5>
+            <p>${details}</p>
+            <p>Price: ${price}</p>
+          </div>
+          <button class="btn-remove" onclick="removeItem(${index})">Remove</button>
+        `;
+        cartItemsDiv.appendChild(cartItem);
+      });
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1); // remove item at index
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart(); // reload cart
+    }
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      loadCart();
+      alert("Cart cleared!");
+    }
+
+    function goToCheckout() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      // Redirect to checkout with first item details
+      const firstItem = cart[0];
+      const name = firstItem.name || "Unknown Item";
+      const price = firstItem.price || "₹100000";
+      window.location.href = `checkout.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}`;
+    }
+
+    // Load cart on page load
+    window.onload = loadCart;
+  </script>
+
+</body>
+</html>
