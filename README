@@ -1,0 +1,54 @@
+# TECHWORLD
+
+TECHWORLD is a student portfolio project showcasing interactive e‑commerce features built with **HTML, CSS, and JavaScript**.  
+It demonstrates front‑end development skills, UI/UX design, and workflow optimization through a fully functional shopping experience.
+
+---
+
+## ✨ Features
+- 🔍 **Product Search** — filter items by category (phones, laptops, watches, etc.)
+- 🛒 **Dynamic Cart System** — add/remove items, store data with localStorage
+- 📱 **Responsive Design** — works across desktop and mobile devices
+- 📩 **Sliding Footer** — displays Contact and About Us info when scrolling down
+- 🎨 **Consistent Branding** — logo, navbar, and footer across all pages
+
+---
+
+## 🚀 Live Demo
+👉 [View TECHWORLD here](https://charulatha-2006.github.io/techworld/)
+
+---
+
+## 🛠️ Tech Stack
+- **HTML5**
+- **CSS3** (Bootstrap + custom styles)
+- **JavaScript (ES6)**
+
+---
+
+## 📂 Project Structure
+techworld/
+│
+├── css/              # Stylesheets
+├── images/           # Project images
+├── index.html         # Landing page
+├── home.html          # Home page
+├── search.html        # Product search page
+├── cart.html          # Shopping cart
+├── profile.html       # Profile page
+├── about.html         # About Us page
+├── contact.html       # Contact page
+├── checkout.html      # Checkout page
+└── LICENSE           # MIT License
+
+
+---
+
+## 📄 License
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙌 Acknowledgements
+Built with passion by **Shreecharulatha** as part of a student portfolio project.  
+Special thanks to mentors, peers, and the developer community for inspiration and guidance.
